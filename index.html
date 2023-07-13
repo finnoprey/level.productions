@@ -3,7 +3,9 @@
   <style>
     body {
       cursor: help;
-      overflow: hidden;
+      min-height: 96vh;
+      display: flex;
+      flex-direction: column;
     }
 
     h1 {
@@ -11,10 +13,9 @@
     }
 
     .container {
-      width: 98vw;
-      height: 98vh;
-      
       display: flex;
+      flex-direction: column;
+      flex-grow: 1;
       justify-content: center;
       align-items: center;
     }
@@ -22,6 +23,26 @@
     .level-large {
       width: min(400px, 80%);
       cursor: none;
+    }
+
+    footer {
+      margin-top: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .socials {
+      margin-top: 50px;
+      width: 150px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    .social-icon {
+      width: 30px;
+      height: 30px;
     }
   </style>
 
@@ -35,7 +56,21 @@
   <body>
     <div class="container">
       <img class="level-large" src="./assets/img/level-large.png"> 
+      
     </div>
+    <footer>
+      <div class="socials">
+        <a href="https://instagram.com/level.with.a.line">
+          <img class="social-icon" src="./assets/img/instagram.png">
+        </a>
+        <a href="https://threads.net/@level.with.a.line">
+          <img class="social-icon" src="./assets/img/threads.png">
+        </a>
+        <a href="https://youtube.com/@level.productions">
+          <img class="social-icon" src="./assets/img/youtube.png">
+        </a>
+      </div>
+    </footer>
   </body>
   <script>
     console.log('hello from xavier :^)')
