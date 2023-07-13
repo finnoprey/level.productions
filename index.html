@@ -1,10 +1,42 @@
 <!DOCTYPE html>
 <html>
+  <style>
+    body {
+      cursor: help;
+    }
+
+    h1 {
+      font-size: 200px;
+    }
+
+    .container {
+      width: 100vw;
+      height: 100vh;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .level-large {
+      width: min(400px, 80%);
+      cursor: none;
+    }
+  </style>
+
   <head>
     <title>LEVEL</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   </head>
   <body>
-    <h1>LEVEL</h1>
-    <p>Finn & Tom</p>
+    <div class="container">
+      <img class="level-large" src="./assets/img/level-large.png"> 
+    </div>
   </body>
+  <script>
+    console.log('hello from xavier :^)')
+  </script>
 </html>
