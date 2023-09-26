@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+    .main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 98vh;
+
+      font-family: 'Roboto Condensed', sans-serif;
+    }
+
+    .time-remaining {
+      display: flex;
+
+      width: 50%;
+    }
+
+    .time-remaining div {
+      font-size: 7vw;
+      color: rgb(233, 227, 208);
+
+      width: 100%;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .glow p {
+      text-align: left;
+      -webkit-animation: glow 8s ease-in-out infinite alternate;
+      -moz-animation: glow 8s ease-in-out infinite alternate;
+      animation: glow ss ease-in-out infinite alternate;
+    }
+
+    .glow {
+      animation: flicker 100ms infinite alternate;
+    }
+
+    @-webkit-keyframes glow {
+      from {
+        text-shadow: 0 0 5px #ffffff44, 0 0 10px #ffffff27, 0 0 15px #d8942d99, 0 0 20px #d87d2d99, 0 0 25px #d87d2d99, 0 0 30px #d87d2d99, 0 0 35px #d88b2d99;
+      }
+      to {
+        text-shadow: 0 0 20px #ffffff4d, 0 0 10px #ff974d71, 0 0 15px #ff974d70, 0 0 20px #ff974d5e, 0 0 25px #ff974d4c, 0 0 30px #ff974d5f, 0 0 35px #ff974d54;
+      }
+    }
+
+    @keyframes flicker {
+      0% {opacity: 0.95;}
+      10% {opacity: 1;}
+      20% {opacity: 0.95;}
+      30% {opacity: 1;}
+      40% {opacity: 1;}
+      50% {opacity: 1;}
+      60% {opacity: 0.9;}
+      70% {opacity: 1;}
+      80% {opacity: 0.9;}
+      90% {opacity: 0.95;}
+      100% {opacity: 0.9;}
+
+    }
+  </style>
+  <head>
+    <title>TAPE 108</title>
+  </head>
+  <body style="background-color: black;">
+    <div class="main">
+      <div class="time-remaining">
+        <div class="glow">
+          <p id="days">00</p>
+          <p>:</p>
+          <p id="hours">00</p>
+          <p>:</p>
+          <p id="minutes">00</p>
+          <p>:</p>
+          <p id="seconds">00</p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const releaseDate = new Date("October 8 2023 13:08:00").getTime()
+
+    const days = document.getElementById("days")
+    const hours = document.getElementById("hours")
+    const minutes = document.getElementById("minutes")
+    const seconds = document.getElementById("seconds")
+    const tenths = document.getElementById("tenths")
+
+    function appendLeadingZero(number) {
+      return ("0" + number).slice(-2)
+    }
+
+    function updateCountdown() {
+      var nowDate = new Date()
+      var remaining = releaseDate - nowDate
+
+      console.log(remaining)
+
+      days.innerHTML = appendLeadingZero(Math.floor(remaining / (1000 * 60 * 60 * 24)))
+      hours.innerHTML = appendLeadingZero(Math.floor((remaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)))
+      minutes.innerHTML = appendLeadingZero(Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60)))
+      seconds.innerHTML = appendLeadingZero(Math.floor((remaining % (1000 * 60)) / 1000))
+    }
+
+    updateCountdown();
+
+    setInterval(updateCountdown, 1000)
+   </script>
+</html>
