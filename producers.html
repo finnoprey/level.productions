@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <style>
+    body {
+      min-height: 96vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .main {
+      font-size: 20px;
+      justify-content: center;
+      text-align: center;
+      line-height: 20px;
+    }
+  </style>
+
+  <head>
+    <title>LEVEL IS PRODUCED BY</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  </head>
+  <body>
+    <div class="container">
+      <div class="main">
+        <p id="text1">Tom Caulfield</p>
+        <p>&</p>
+        <p id="text2">Finn Scicluna-O'Prey</p>
+      </div>
+    </div>
+  </body>
+  <script>
+    let order = Math.floor(Math.random() * 2)
+
+    const text1 = document.getElementById("text1")
+    const text2 = document.getElementById("text2")
+
+    if (order == 0) {
+      text1.innerHTML = "Tom Caulfield"
+      text2.innerHTML = "Finn Scicluna-O'Prey"
+    } else {
+      text1.innerHTML = "Finn Scicluna-O'Prey"
+      text2.innerHTML = "Tom Caulfield"
+    }
+
+    console.log('hello from xavier :^)')
+  </script>
+</html>

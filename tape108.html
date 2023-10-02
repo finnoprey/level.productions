@@ -10,7 +10,8 @@
     .main {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
+      flex-direction: column;
       height: 98vh;
 
       font-family: 'Roboto Condensed', sans-serif;
@@ -18,6 +19,8 @@
 
     .time-remaining {
       display: flex;
+      align-items: center;
+      justify-content: center;
 
       width: 50%;
     }
@@ -44,6 +47,16 @@
       animation: flicker 100ms infinite alternate;
     }
 
+    .footer {
+      height: 5vw;
+    }
+
+    .footer a {
+      color: rgba(255, 255, 255, 0.353);
+      font-size: max(20px, 2vw);
+      text-decoration: none;
+    }
+
     @-webkit-keyframes glow {
       from {
         text-shadow: 0 0 5px #ffffff44, 0 0 10px #ffffff27, 0 0 15px #d87d2d99, 0 0 20px #d8662d99, 0 0 25px #df642299, 0 0 30px #d8692d99, 0 0 35px #e46e1f99;
@@ -65,7 +78,6 @@
       80% {opacity: 0.9;}
       90% {opacity: 0.95;}
       100% {opacity: 0.9;}
-
     }
   </style>
   <head>
@@ -73,6 +85,7 @@
   </head>
   <body style="background-color: black;">
     <div class="main">
+      <div style="height: 2vh;"></div>
       <div class="time-remaining">
         <div class="glow">
           <p id="days">00</p>
@@ -83,6 +96,9 @@
           <p>:</p>
           <p id="seconds">00</p>
         </div>
+      </div>
+      <div class="footer">
+        <a href="https://www.youtube.com/watch_popup?v=1QqT4WfQlSM">Teaser Trailer</a>
       </div>
     </div>
   </body>
