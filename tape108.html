@@ -6,15 +6,21 @@
   <script defer src="/_vercel/insights/script.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&display=swap');
 
     .main {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       flex-direction: column;
       height: 98vh;
 
       font-family: 'Roboto Condensed', sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+      
     }
 
     .time-remaining {
@@ -48,17 +54,6 @@
       animation: flicker 100ms infinite alternate;
     }
 
-    .footer {
-      height: 5vw;
-    }
-
-    .footer a {
-      color: rgba(255, 118, 44, 0.5);
-      letter-spacing: 0.8px;
-      font-size: max(15px, 1.5vw);
-      text-decoration: none;
-    }
-
     @-webkit-keyframes glow {
       from {
         text-shadow: 0 0 5px #ffffff44, 0 0 10px #ffffff27, 0 0 15px #d87d2d99, 0 0 20px #d8662d99, 0 0 25px #df642299, 0 0 30px #d8692d99, 0 0 35px #e46e1f99;
@@ -87,8 +82,7 @@
   </head>
   <body style="background-color: black;">
     <div class="main">
-      <div style="height: 2vh;"></div>
-      <div class="time-remaining">
+      <div class="time-remaining" onclick="click_countdown()" onmouseover="hover_countdown()">
         <div class="glow">
           <p id="days">00</p>
           <p>:</p>
@@ -98,9 +92,6 @@
           <p>:</p>
           <p id="seconds">00</p>
         </div>
-      </div>
-      <div class="footer">
-        <a href="https://www.youtube.com/watch_popup?v=1QqT4WfQlSM">TEASER TRAILER</a>
       </div>
     </div>
   </body>
@@ -161,6 +152,14 @@
     }
 
     updateCountdown();
+
+    function click_countdown() {
+      window.open('https://www.youtube.com/watch_popup?v=1QqT4WfQlSM','_self')
+    }
+
+    function hover_countdown() {
+      // alert('Click link for fun!')
+    }
 
     setInterval(updateCountdown, 1000)
    </script>
