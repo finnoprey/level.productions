@@ -34,6 +34,7 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      cursor: help;
     }
 
     .glow p {
@@ -112,6 +113,12 @@
     const seconds = document.getElementById("seconds")
     const tenths = document.getElementById("tenths")
 
+    //var tick = new Audio('tick.mp3');
+    var countdown = new Audio('countdown.mp3')
+
+    let has_played_countdown = false
+
+
     function appendLeadingZero(number) {
       return ("0" + number).slice(-2)
     }
@@ -139,6 +146,18 @@
       hours.innerHTML = appendLeadingZero(hoursText)
       minutes.innerHTML = appendLeadingZero(minutesText)
       seconds.innerHTML = appendLeadingZero(secondsText)
+
+      //tick.play()
+
+      if (!has_played_countdown) {
+        countdown.play().then(() => {
+          has_played_countdown = true
+        })
+        .catch (error => {
+          console.info('No interaction, can\'t start music')
+        })
+        
+      }
     }
 
     updateCountdown();
